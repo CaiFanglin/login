@@ -1,0 +1,70 @@
+<!doctype html>
+<html ng-app="loginApp">
+<head ng-controller="titleCtrl">
+	<meta charset="utf-8">
+	<title ng-bind="title"></title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	
+</head>
+<body style=" background: url(./img/bg2.png) repeat;">
+	<div style="align:center;margin:200px auto;padding:200px auto;border:1px gray solid;border-radius:5px;width:450px;height:350px;background-color:pink;">
+		<div style="align:center;margin:3px auto;padding:3px auto;border:1px gray solid;border-radius:5px;width:440px;height:340px;background-color:#e2e2e2;">
+			<h2 style="font:30px;font-weight:bold;margin:5px 10px;padding:5px auto;">Login</h2>
+			<span class="icon-search" style="margin:0px 10px;"></span> <span style="font-size:20px;font-weight:3px;margin:5px 0px;padding:5px auto;">Welcome to login's page</span>
+			<br/><br/>
+
+			<div class="alert alert-error">
+				<strong>LOOK!</strong>
+				<label>Don't forget the userName & password.</label>
+			</div>
+			<div ng-controller="loginCtrl">
+				<form method="post" action="#" autocomplete="off" class="validate form-horizontal" name="myForm">
+					<div class="login">
+						<div class="email" style="margin-top:5px;margin-left:15px;">
+							<label for="user" style="float:left;text-align:right;">Email</label>
+							<div class="email-input" style="float:right; margin-top: -5px; width: 350px !important;">
+								<div class="control-group">
+									<div class="input-prepend">
+										<span class="add-on">
+											<i class="icon-envelope"></i>
+										</span>
+										<input type="text" id="user" name="user" required class="{required:true}" ng-model="user.email" placeholder="userName/Email/Tel">
+									</div>
+								</div>
+							</div>
+						</div>
+						<br/><br/>
+						<div class="password" style="margin-top:5px;margin-left:15px;">
+							<label for="password" style="float:left;text-align:right;">Password</label>
+							<div style="float:right; margin-top: -5px; width: 350px !important;">
+								<div class="control-group">
+									<div class="input-prepend">
+										<span class="add-on">
+											<i class="icon-lock"></i>
+										</span>
+										<input type="text" id="password" name="password" required class="{required:true}" ng-model="user.password" placeholder="your password">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div style="float:right;width:350px !important;">
+							<label>
+								<input type="checkbox" ng-model="user.checkbox" value="1" name="remember"> Remember me on this computer
+							</label>
+						</div>
+					</div>
+					<br/><br/><br/><br/>
+					<div style="float:right;width:170px !important;">
+						<button type="button" ng-disabled="!myForm.$valid" class="btn btn-success">submit</button>
+					</div>
+				</form>	
+			</div>
+		</div>
+	</div>
+
+	 <script src="http://apps.bdimg.com/libs/angular.js/1.2.16/angular.min.js"></script>
+    
+	<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
